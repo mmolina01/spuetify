@@ -55,6 +55,7 @@ const store = createStore({
 		async login({ commit }, payload) {
 			await auth.signInWithEmailAndPassword(payload.email, payload.password);
 			commit('toggleAuth');
+			console.log('login')
 		},
 		async signOut({ commit }) {
 			await auth.signOut();

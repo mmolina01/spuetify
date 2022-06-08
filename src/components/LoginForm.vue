@@ -4,7 +4,7 @@
 		{{ login_alert_message }}
 	</div>
 
-	<vee-form :validation-schema="loginSchema" @submit="login">
+	<vee-form :validation-schema="loginSchema" @submit="loginUser">
 		<!-- Email -->
 		<div class="mb-3">
 			<label for="email" class="inline-block mb-2">Email</label>
@@ -52,7 +52,7 @@ export default {
 	},
 	methods: {
 		...mapActions(['login']),
-		async login(values) {
+		async loginUser(values) {
 			if (!this.login_in_submission) {
 				this.login_in_submission = true;
 				this.login_show_alert = true;
